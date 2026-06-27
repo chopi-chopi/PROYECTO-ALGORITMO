@@ -1,0 +1,100 @@
+145,P,The Dark Knight,152
+101,L,Cien anos de soledad,496
+182,M,Bohemian Rhapsody,6
+123,P,Inception,148
+167,L,1984,328
+112,M,Thriller,6
+189,P,Pulp Fiction,154
+105,L,Don Quijote de la Mancha,1056
+154,M,Hotel California,6
+130,P,Interstellar,169
+177,L,El Principito,96
+194,M,Stairway to Heaven,8
+116,P,Matrix,136
+149,L,Ficciones,176
+102,M,Imagine,3
+183,P,Fight Club,139
+111,L,Cronica de una muerte anunciada,120
+157,M,Smells Like Teen Spirit,5
+138,P,Gladiator,155
+166,L,Un mundo feliz,256
+199,M,Billie Jean,5
+104,P,Forrest Gump,142
+125,L,El señor de los anillos,1216
+172,M,Hey Jude,7
+150,P,Star Wars IV,121
+181,L,Orgullo y prejuicio,432
+119,M,Sweet Child O Mine,6
+134,P,Goodfellas,146
+161,L,Crimen y castigo,608
+190,M,Like a Rolling Stone,6
+108,P,The Matrix Reloaded,138
+142,L,Metamorfosis,112
+175,M,Another Brick in the Wall,6
+129,P,Schindlers List,195
+153,L,Rayuela,600
+115,M,Back in Black,4
+188,P,Seven,127
+106,L,El guardian entre el centeno,224
+147,M,Stayin Alive,4
+122,P,The Silence of the Lambs,118
+169,L,Grandes esperanzas,544
+192,M,Purple Rain,8
+110,P,Saving Private Ryan,169
+135,L,Pedro Paramo,128
+179,M,One,4
+152,P,The Green Mile,189
+185,L,La Odisea,448
+117,M,Hotel California Live,7
+141,P,Parasite,132
+163,L,El alquimista,192
+196,M,Lose Yourself,5
+103,P,Whiplash,106
+128,L,Guerra y paz,1224
+174,M,Wonderwall,4
+148,P,The Prestige,130
+186,L,Ulysses,736
+120,M,Losing My Religion,4
+136,P,Memento,113
+160,L,Frankenstein,288
+191,M,Piano Man,5
+107,P,The Departed,151
+144,L,Dracula,416
+171,M,Dancing Queen,4
+124,P,The Lion King,88
+156,L,Moby Dick,624
+118,M,Yesterday,2
+187,P,The Pianist,150
+109,L,Madame Bovary,448
+146,M,All You Need Is Love,3
+121,P,Gladiator II,148
+165,L,Fahrenheit 451,192
+195,M,Comfortably Numb,6
+113,P,Spirited Away,125
+139,L,La metamorfosis,96
+178,M,Hallelujah,5
+151,P,The Shining,146
+184,L,El codigo Da Vinci,530
+114,M,Born to Run,4
+133,P,American History X,119
+164,L,El resplandor,688
+197,M,Creep,4
+127,P,Casablanca,102
+158,L,Sapiens,512
+173,M,Superstition,4
+140,P,Psycho,109
+180,L,Ensayo sobre la ceguera,320
+126,M,Heroes,6
+132,P,City of God,130
+162,L,Los miserables,1488
+198,M,Under the Bridge,4
+131,P,Alien,117
+155,L,La iliada,512
+176,M,Kashmir,8
+143,P,Blade Runner,117
+170,L,Cumbres borrascosas,416
+193,M,Roxanne,3
+137,P,The Truman Show,103
+159,L,Lolita,336
+200,M,With or Without You,5
+114,P,The Terminator,107
