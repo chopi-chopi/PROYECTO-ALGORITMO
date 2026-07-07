@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <string.h>
 #define ARCHIVO "LIBRERIA.txt"
 
 typedef struct registro {
@@ -20,6 +21,8 @@ typedef struct Nodo {
 } Nodo;
 
 void leer_archivo(registro *bd) {
+    (void)bd;
+
     FILE *f = fopen(ARCHIVO, "r");
     if (!f) {
         perror("Error al abrir el archivo");
@@ -49,9 +52,22 @@ void leer_archivo(registro *bd) {
         }
     }
 
-    fclose(ARCHIVO);
+    fclose(f);
 }
 
-Nodo* insertar_registro(Nodo* nodo, registro datos);
+Nodo* crear_nodo(registro datos) {
+    Nodo *n = (Nodo*)malloc(sizeof(Nodo));
+    if (!n) return NULL;
+    n->time = datos.time;
+    n->datos = datos;
+    n->izq = NULL;
+    n->der = NULL;
+    n->altura = 1;
+    return n;
+}
+
+
+Nodo* insertar_registro_lista(Nodo* nodo, registro datos); 
+void insertar_registro(void);
 Nodo* eliminar_registro(Nodo* nodo, uint64_t time);
 void buscar_por_rango(Nodo* raiz, uint64_t inicio, uint64_t final);
