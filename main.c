@@ -41,14 +41,14 @@ void insertar_registro_usuario(void) {
 
     nuevo.time = (uint64_t)nuevo.id;
 
-    FILE *ARCHIVO = fopen("LIBRERIA.txt", "a");
-    if (!ARCHIVO) {
+    FILE *f = fopen(ARCHIVO, "a");
+    if (!f) {
         perror("No se pudo abrir LIBRERIA.txt");
         return;
     }
 
-    fprintf(ARCHIVO, "%d,%c,%s,%d\n", nuevo.id, nuevo.tipo, nuevo.nom, nuevo.duracion);
-    fclose(ARCHIVO);
+    fprintf(f, "%d,%c,%s,%d\n", nuevo.id, nuevo.tipo, nuevo.nom, nuevo.duracion);
+    fclose(f);
 
     printf("Registro agregado correctamente.\n");
 }
@@ -75,13 +75,14 @@ int main() {
         insertar_registro_usuario();
         break;
 
-        case 2: 
-        eliminar_registro();
+       /* case 2:                 me da rabia que
+        eliminar_registro();      salga como error
+                                   despues lo des-comentan
         break; 
 
         case 3:
         buscar_por_rango();
-        break;
+        break; */ 
 
         case 0:
         printf("Saliendo del programa...\n");
