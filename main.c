@@ -23,6 +23,7 @@ Nodo* insertar_registro_lista(Nodo* nodo, registro datos) {
 }
 
 void insertar_registro_usuario(void) {
+   Nodo* raiz = insertar_registro_lista(NULL, (registro){0, 0, '\0', "", 0}); // Inicializar la raíz si es NULL
     registro nuevo; 
 
     printf("Ingrese ID: ");
