@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "def.c"
 #include <stdint.h>
-#include "orden.c"
+#include "def.h"
+#include "orden.h"
 
 Nodo* insertar_registro_lista(Nodo* nodo, registro datos) {
     if (nodo == NULL) {
@@ -15,15 +15,13 @@ Nodo* insertar_registro_lista(Nodo* nodo, registro datos) {
     } else if (datos.time > nodo->time) {
         nodo->der = insertar_registro_lista(nodo->der, datos);
     } else {
-        // Si ya existe la misma clave, lo insertamos por la derecha
         nodo->der = insertar_registro_lista(nodo->der, datos);
     }
 
     return nodo;
 }
 
-void insertar_registro_usuario(void) {
-   Nodo* raiz = insertar_registro_lista(NULL, (registro){0, 0, '\0', "", 0}); // Inicializar la raíz si es NULL
+void insertar_registro_usuario(Nodo** raiz) {
     registro nuevo; 
 
     printf("Ingrese ID: ");
@@ -42,53 +40,74 @@ void insertar_registro_usuario(void) {
 
     nuevo.time = (uint64_t)nuevo.id;
 
-    FILE *f = fopen(ARCHIVO, "a");
+    *raiz = insertar_registro(*raiz, nuevo);
+
+    FILE *f = fopen("LIBRERIA.txt", "a");
     if (!f) {
         perror("No se pudo abrir LIBRERIA.txt");
         return;
     }
-
     fprintf(f, "%d,%c,%s,%d\n", nuevo.id, nuevo.tipo, nuevo.nom, nuevo.duracion);
     fclose(f);
 
     printf("Registro agregado correctamente.\n");
 }
 
-
-Nodo* eliminar_registro(Nodo* nodo, uint64_t time);
-
-void buscar_por_rango(Nodo* raiz, uint64_t inicio, uint64_t fin);
-
-
 int main() {
     int opcion;
-    leer_archivo(NULL);
+    Nodo* raiz = NULL; 
+
+    raiz = cargar_en_arbol("LIBRERIA.txt");
+
     printf("BIENVENIDO A LA BIBLIOTECA DE ALEJANDRIA\n");
-    printf("por favor, seleccione una opcion. . .\n");
-    printf("0. Salir \n");
-    printf("1. Insertar registro\n");
-    printf("2. Eliminar registro\n");
-    printf("3. Buscar por rango\n");
-    scanf("%d", &opcion);
 
-    switch (opcion) {
-        case 1: 
-        insertar_registro_usuario();
-        break;
+        do {
+        printf("\nSeleccione una opcion:\n");
+        printf("0. Salir \n");
+        printf("1. Insertar registro\n");
+        printf("2. Eliminar registro\n");
+        printf("3. Buscar por rango\n");
+        printf("4. Ordenar registros\n"); 
+        printf("Opcion: ");
+        scanf("%d", &opcion);
 
-       /* case 2:                 me da rabia que
-        eliminar_registro();      salga como error
-                                   despues lo des-comentan
-        break; 
+        switch (opcion) {
+            case 1: 
+                insertar_registro_usuario(&raiz);
+                break;
 
-        case 3:
-        buscar_por_rango();
-        break; */ 
+            case 2: {
+                int id;
+                printf("Ingrese ID a eliminar: ");
+                scanf("%d", &id);
+                raiz = eliminar_registro(raiz, (uint64_t)id);
+                break;
+            }
+            
+            case 3: {
+                int inicio, fin;
+                printf("Ingrese rango de IDs (inicio fin): ");
+                scanf("%d %d", &inicio, &fin);
+                buscar_por_rango(raiz, (uint64_t)inicio, (uint64_t)fin);
+                break;
+            }
 
-        case 0:
-        printf("Saliendo del programa...\n");
-        break;
-    }
+            case 4: {
+                merge_sort(&raiz);
+                printf("Registros ordenados por ID:\n");
+                imprimir_inorder(raiz);
+                break;
+            }
+
+            case 0:
+                printf("Saliendo del programa...\n");
+                break;
+
+        default:
+            printf("Opcion invalida.\n");
+            break;
+        }
+    } while (opcion != 0);
 
     return 0;
 }
