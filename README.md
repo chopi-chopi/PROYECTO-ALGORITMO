@@ -1,6 +1,6 @@
 # PROYECTO ALGORITMO
 
-Nuestro proyecto trata sobre una biblioteca de organizamiento, donde es posible ingresar, eliminar, buscar u ordenar registros, basicamente una biblioteca interactiva.
+Nuestro proyecto trata sobre una biblioteca de organizamiento, donde es posible ingresar, eliminar, buscar y ordenar registros, basicamente una biblioteca interactiva.
 Para poder crear nuestra biblioteca usamos codigo C, las estructuras de datos "struct registro" (representa cada registro) y "struct nodo" (representa cada nodo del arbol binario), el arbol binario de búsqueda que se usa para insertar, eliminar y buscar registros por ID, el algoritmo de mergesort implementado en orden.c para ordenar los registros, fopen/fscanf/fprintf para leer y poder escribir en la libreria, etc.
 
 # ARCHIVOS:
@@ -21,3 +21,10 @@ LIBRERIA.txt - archivo de texto, contiene todos los registros y datos
 -mostrar_registros: muestra todos los registros desde el archivo
 -introducir_registro: permite ingresar un nuevo registro y guardarlo en el archivo
 -merge_sort: ordena los registros por ID usando MergeSort 
+
+//Para correr el programa introducir lo siguiente en la terminal: 
+//gcc -Wall -Wextra -std=c11 -c main.c
+gcc -Wall -Wextra -std=c11 -c orden.c
+gcc -Wall -Wextra -std=c11 -c def.c
+gcc -Wall -Wextra -std=c11 main.o orden.o def.o -o biblioteca.exe
+.\biblioteca.exe
